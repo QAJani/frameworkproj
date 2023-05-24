@@ -13,7 +13,7 @@ public class accountpage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(linkText = "Edit your account information")
+    @FindBy(xpath = "//a[normalize-space()='Edit your account information']")
     WebElement editAccountInfoLink;
 
     public WebElement editAccountInfoLink() {
