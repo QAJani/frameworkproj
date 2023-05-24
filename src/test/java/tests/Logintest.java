@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import pageobjects.accountpage;
@@ -26,13 +27,18 @@ public class Logintest extends Base {
         Thread.sleep(3000);
 
         loginPage loginpage = new loginPage(driver);
-        loginpage.emailAddressField().sendKeys("testy@test.com");
-        loginpage.passwordAddressField().sendKeys("test");
+        loginpage.emailAddressField().sendKeys(prop.getProperty("email"));
+        loginpage.passwordAddressField().sendKeys("password");
         loginpage.button().click();
 
         accountpage ap = new accountpage(driver);
         Assert.assertTrue(ap.editAccountInfoLink().isDisplayed());
 
     }
+
+    // @AfterMethod
+    // public void closure() {
+    //     driver.close();
+    // }
 
 }
