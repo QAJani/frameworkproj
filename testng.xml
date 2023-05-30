@@ -1,8 +1,29 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="My Test Suite">
+<suite name="My Test Suite" parallel="tests" thread-count="5">
+    <test name="TestFour">
+        <classes>
+            <class name="tests.Fourtest" />
+
+        </classes>
+    </test>
+    <test name="TestTwo">
+        <classes>
+
+            <class name="tests.Twotest" />
+
+        </classes>
+    </test>
+    <test name="TestThree">
+        <classes>
+
+            <class name="tests.Threetest" />
+        </classes>
+    </test>
     <test name="My Test">
         <classes>
+
             <class name="tests.Logintest" />
+
         </classes>
     </test>
 </suite>
