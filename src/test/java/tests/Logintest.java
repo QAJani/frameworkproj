@@ -2,6 +2,8 @@ package tests;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -16,11 +18,15 @@ import resources.*;
 
 public class Logintest extends Base {
     WebDriver driver;
+    Logger log;
 
     @BeforeMethod
     public void openApplication() throws IOException {
+        log = LogManager.getLogger(Logintest.class.getName());
         driver = initializeDriver();
+        log.debug("Browser got launched");
         driver.get(prop.getProperty("url"));
+        log.debug("Navigated to application URL");
     }
 
     @Test(dataProvider = "getLoginData")
@@ -34,6 +40,7 @@ public class Logintest extends Base {
         loginpage.emailAddressField().sendKeys(email);
         loginpage.passwordAddressField().sendKeys(password);
         loginpage.button().click();
+        log.debug("Clicked on My Account dropdown");
 
         accountpage ap = new accountpage(driver);
         String actualResult;
@@ -50,6 +57,7 @@ public class Logintest extends Base {
     @AfterMethod
     public void closure() {
         driver.close();
+        log.debug("Browser got closed");
     }
 
     @DataProvider
