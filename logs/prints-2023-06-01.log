@@ -1,5 +1,5 @@
-15:08:07.482 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
-15:08:07.483 [main] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: unavailable
+14:15:24.786 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+14:15:24.788 [main] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: unavailable
 java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
 	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31) ~[netty-common-4.1.91.Final.jar:4.1.91.Final]
 	at io.netty.util.internal.PlatformDependent0$5.run(PlatformDependent0.java:288) ~[netty-common-4.1.91.Final.jar:4.1.91.Final]
@@ -26,7 +26,7 @@ java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
 	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88) ~[selenium-chrome-driver-4.9.1.jar:?]
 	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84) ~[selenium-chrome-driver-4.9.1.jar:?]
 	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52) ~[selenium-chrome-driver-4.9.1.jar:?]
-	at resources.Base.initializeDriver(Base.java:38) ~[classes/:?]
+	at resources.Base.initializeDriver(Base.java:42) ~[classes/:?]
 	at tests.Logintest.openApplication(Logintest.java:26) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
@@ -60,8 +60,8 @@ java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
 	at com.microsoft.java.test.runner.testng.TestNGRunner.run(TestNGRunner.java:45) [com.microsoft.java.test.runner-jar-with-dependencies.jar:?]
 	at com.microsoft.java.test.runner.testng.TestNGLauncher.execute(TestNGLauncher.java:32) [com.microsoft.java.test.runner-jar-with-dependencies.jar:?]
 	at com.microsoft.java.test.runner.Launcher.main(Launcher.java:57) [com.microsoft.java.test.runner-jar-with-dependencies.jar:?]
-15:08:07.485 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true
-15:08:07.486 [main] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
+14:15:24.790 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true
+14:15:24.790 [main] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
 java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$7 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @76628072
 	at jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:392) ~[?:?]
 	at java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:674) ~[?:?]
@@ -90,7 +90,7 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88) ~[selenium-chrome-driver-4.9.1.jar:?]
 	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84) ~[selenium-chrome-driver-4.9.1.jar:?]
 	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52) ~[selenium-chrome-driver-4.9.1.jar:?]
-	at resources.Base.initializeDriver(Base.java:38) ~[classes/:?]
+	at resources.Base.initializeDriver(Base.java:42) ~[classes/:?]
 	at tests.Logintest.openApplication(Logintest.java:26) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
