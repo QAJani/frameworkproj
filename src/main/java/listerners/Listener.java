@@ -6,14 +6,20 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 import resources.Base;
 
 public class Listener extends Base implements ITestListener {
+    ExtentReports extentReport = ExtentReporter.getExtentReport();
+    ExtentTest extentTest;
+    ThreadLocal<ExtentTest> extentTestThread = new ThreadLocal<ExtentTest>();
 
     @Override
     public void onFinish(ITestContext context) {
-
+        extentReport.flush();
     }
 
     @Override
@@ -33,6 +39,9 @@ public class Listener extends Base implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
+        String testMethodName = result.getName();
+        // extentTest.fail(result.getThrowable());
+        extentTestThread.get().fail(result.getThrowable());
         WebDriver driver = null;
         String testname = result.getName();
         try {
@@ -43,7 +52,8 @@ public class Listener extends Base implements ITestListener {
             e.printStackTrace();
         }
         try {
-            takeScreenshot(testname, driver);
+            String screenshotFilePath = takeScreenshot(testMethodName, driver);
+            extentTestThread.get().addScreenCaptureFromPath(screenshotFilePath, testMethodName);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -57,12 +67,16 @@ public class Listener extends Base implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-
+        String testName = result.getName();
+        extentTest = extentReport.createTest(testName + " execution started");
+        extentTestThread.set(extentTest);
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-
+        String testName = result.getName();
+        // extentTest.log(Status.PASS, testName + "Test Passed");
+        extentTestThread.get().log(Status.PASS, testName + "Test Passed");
     }
 
 }

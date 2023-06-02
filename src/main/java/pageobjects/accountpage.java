@@ -14,7 +14,7 @@ public class accountpage {
     }
 
     @FindBy(xpath = "//a[normalize-space()='Edit your account information']")
-    WebElement editAccountInfoLink;
+    private WebElement editAccountInfoLink;
 
     public WebElement editAccountInfoLink() {
         return editAccountInfoLink;

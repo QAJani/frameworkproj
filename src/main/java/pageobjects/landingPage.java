@@ -14,10 +14,10 @@ public class landingPage {
     }
 
     @FindBy(xpath = "//span[normalize-space()='My Account']")
-    WebElement myAccountDropdown;
+    private WebElement myAccountDropdown;
 
     @FindBy(linkText = "Login")
-    WebElement loginOption;
+    private WebElement loginOption;
 
     public WebElement myAccountDropdown() {
         return myAccountDropdown;
